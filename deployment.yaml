@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   labels:
     app: docker-gs-ping
   name: docker-gs-ping
@@ -9,11 +10,16 @@ spec:
   selector:
     matchLabels:
       app: docker-gs-ping
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: docker-gs-ping
     spec:
       containers:
         - image: rexwang/docker-gs-ping:v1
-        name: docker-gs-ping
+          name: docker-gs-ping
+          resources: {}
+          imagePullPolicy: Always
+status: {}
